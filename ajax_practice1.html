@@ -56,15 +56,15 @@ function displayResponse(request) {
     if (request.readyState === 4) {
     if (request.status === 200 || request.status === 304) {
     
-              alert(request.responseText); 
+             /* alert(request.responseText); */
     
-     /* var json ='{"result": true}',
+      var json = request.responseText;
         objCountries =  JSON.parse(json);
 
 
         
 
-        alert(objCountries.countries[0]); */
+        alert(objCountries.countries[0]); 
            
             
             

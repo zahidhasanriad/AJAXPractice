@@ -14,6 +14,8 @@
     
         <a href="country.txt" onclick="grabFile(this.href);return false;">Show</a> 
         
+        <select id="ftfl"> </select>
+        
        <!-- <a href="country.txt" onclick="getJsonData(this.href);return false;">Show JSON</a> -->
 
  <script>
@@ -62,15 +64,39 @@ function displayResponse(request) {
         objCountries =  JSON.parse(json);
 
 
-        
+         var options="";
 
-        alert(objCountries.countries[0]); 
+
+        for(var i=0; i<objCountries.countries.length; i++){
+            
+            options +="<option value = '" +objCountries.countries[i].country['country_id'] + "'>"+objCountries.countries[i].country['country_name']+"</option>";
+            
+            
+           /* document.write("Country ID: "+objCountries.countries[i].country.country_id+"<br/>"+
+                   objCountries.countries[i].country.country_name+"<br/>" );
+                    */
+            
+           
+             
+         
+          
+        }
+                
+            alert(options);
+          
+          document.getElementById("ftfl").innerHTML= options;
+               
            
             
+            
+           
+           	
             
             
             
             }
+            
+           
     }
 }
 
